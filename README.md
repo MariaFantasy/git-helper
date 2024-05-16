@@ -24,9 +24,9 @@ HEAD — это голова.
 
 ```mermaid
 graph LR;
-  A[untracked (неотслеживаемый)] -- "git add" --> B[staged (в списке на коммит) + tracked];
-  B[staged (в списке на коммит) + tracked] -- "git commit" --> C[tracked (отслеживаемый)];
-  B[staged (в списке на коммит) + tracked] -- "Изменения" --> D[modified (измененный)];
-  D[modified (измененный)] -- "git add" --> B[staged (в списке на коммит) + tracked];
-  C[tracked (отслеживаемый)] -- "Изменения" --> D[modified (измененный)];
+  A[untracked] -- "git add" --> B[staged + tracked];
+  B[staged + tracked] -- "git commit" --> C[tracked];
+  B[staged + tracked] -- "Changes" --> D[modified];
+  D[modified] -- "git add" --> B[staged + tracked];
+  C[tracked] -- "Changes" --> D[modified];
 ```
